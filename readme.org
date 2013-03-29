@@ -1,0 +1,2 @@
+A program to explore the probabilities of various rolls in the dice
+game Farkle.
