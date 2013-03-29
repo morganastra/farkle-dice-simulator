@@ -5,18 +5,6 @@
       acc
       (roll-dice (1- n) (cons (1+ (random 6)) acc))))
 
-;(defun categorize (roll)
-;  (let ((sorted-roll (sort (copy-list roll) #'<)))
-;    (cond ((straight-p sorted-roll) 'straight)
-;          ((six-of-kind-p sorted-roll) 'six-of-kind)
-;          ((three-pairs-p sorted-roll) 'three-pairs)
-;          ((two-triplets-p sorted-roll) 'two-triplets)
-;          ((five-of-kind-p sorted-roll) 'five-of-kind)
-;          ((four-of-kind-p sorted-roll) 'four-of-kind)
-;          ((three-of-kind-p sorted-roll) 'three-of-kind)
-;          ((some-ones-p sorted-roll) 'some-ones)
-;          ((some-fives-p sorted-roll) 'some-fives))))
-
 (defun categorize (roll)
   (cond ((straight-p roll) 'straight)
         ((six-of-kind-p roll) 'six-of-kind)
@@ -39,9 +27,6 @@
             (loop for el in roll-counts
                when (equalp el tuple)
                  collect el))))
-
-;(defun straight-p (roll)
-;  (equalp roll (list 1 2 3 4 5 6)))
 
 (defun straight-p (roll)
   (and (member 1 roll)
